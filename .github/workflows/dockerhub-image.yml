@@ -1,22 +1,6 @@
 name: Docker Image CI
 
 on:
-    # push:
-    #     branches: ["main"]
-    #     tags: ["v*"]
-    #     paths:
-    #         - "src/**"
-    #         - "static/**"
-    #         - "Dockerfile"
-    #         - ".dockerignore"
-    # pull_request:
-    #     branches: ["main"]
-    #     paths:
-    #         - "src/**"
-    #         - "static/**"
-    #         - "Dockerfile"
-    #         - ".dockerignore"
-    # workflow_dispatch:
     release:
         types: [published, prereleased]
 
@@ -57,11 +41,3 @@ jobs:
                   tags: makeplane/vert:${{ env.TAG_NAME }}
               env: 
                 DOCKER_BUILDKIT: 1
-                #   build-args: |
-                #       PUB_ENV=production
-                #       PUB_HOSTNAME=${{ vars.PUB_HOSTNAME || '' }}
-                #       PUB_PLAUSIBLE_URL=${{ vars.PUB_PLAUSIBLE_URL || '' }}
-                #       PUB_VERTD_URL=https://vertd.vert.sh
-                #       PUB_DISABLE_ALL_EXTERNAL_REQUESTS=false
-                #       PUB_DONATION_URL=https://donations.vert.sh
-                #       PUB_STRIPE_KEY=pk_live_51RDVmAGSxPVad6bQwzVNnbc28nlmzA30krLWk1fefCMpUPiSRPkavMMbGqa8A3lUaOCMlsUEVy2CWDYg0ip3aPpL00ZJlsMkf2
